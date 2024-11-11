@@ -1,0 +1,20 @@
+<!-- navbar.component.html -->
+<nav class="navbar" [@fadeIn]>
+    <div class="navbar-container">
+        <div class="logo">
+            <img src="../../../assets/img/logo.png" alt="Restaurant Logo" />
+        </div>
+        <div class="menu-icon" (click)="toggleMenu()" [@fadeIn]>
+            <div [ngClass]="{'change': isMenuOpen}">
+                <div class="bar1"></div>
+                <div class="bar2"></div>
+                <div class="bar3"></div>
+            </div>
+        </div>
+        <ul [ngClass]="{'nav-menu': true, 'active': isMenuOpen}" [@slideInOut]>
+            <li class="nav-item" *ngFor="let tab of tabs" [@fadeInUp]>
+                <a href="{{tab.link}}" class="nav-links">{{tab.label}}</a>
+            </li>
+        </ul>
+    </div>
+</nav>

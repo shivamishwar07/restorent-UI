@@ -1,0 +1,191 @@
+.restaurant-hero {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 50px;
+    background-color: #F7EDD4;
+    position: relative;
+}
+
+.hero-content {
+    max-width: 50%;
+}
+
+.title {
+    font-size: 3rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+    margin-top: 10px;
+    line-height: 1;
+}
+
+.description {
+    font-size: 1rem;
+    margin-bottom: 40px;
+    color: #666;
+}
+
+.action-buttons {
+    display: flex;
+    gap: 15px;
+}
+
+.explore-btn,
+.search-btn {
+    padding: 10px 25px;
+    border-radius: 50px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+.explore-btn {
+    background-color: #fc6045;
+    color: white;
+    border: none;
+}
+
+.explore-btn:hover {
+    background-color: #e35035;
+}
+
+.search-btn {
+    background-color: white;
+    color: black;
+    border: 2px solid #fc6045;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.search-btn:hover {
+    background-color: #fc6045;
+    color: white;
+}
+
+.hero-image {
+    position: relative;
+}
+
+.bowl-image {
+    width: 550px;
+    height: auto;
+    position: relative;
+    z-index: 2;
+    animation: float-bowl 3s ease-in-out infinite;
+}
+
+@keyframes float-bowl {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+.category-list {
+    position: absolute;
+    top: 50px;
+    right: -80px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.category-item {
+    background-color: #fff;
+    padding: 10px 20px;
+    border-radius: 30px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.3s;
+    display: flex;
+    gap: 5px;
+}
+
+.category-item:hover {
+    transform: scale(1.1);
+}
+
+.mint-leaf,
+.chili {
+    position: absolute;
+}
+
+.mint-leaf {
+    top: -10px;
+    left: -35px;
+    width: 100px;
+    animation: rotate-mint 5s linear infinite;
+}
+
+@keyframes rotate-mint {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.chili {
+    bottom: 10px;
+    right: 65px;
+    width: 100px;
+    animation: swing-chili 3s ease-in-out infinite;
+}
+
+@keyframes swing-chili {
+
+    0%,
+    100% {
+        transform: rotate(0);
+    }
+
+    50% {
+        transform: rotate(15deg);
+    }
+}
+
+.restaurant-hero {
+    padding: 50px 180px 0px 100px;
+}
+
+@media (max-width: 768px) {
+    .restaurant-hero {
+        padding: 30px;
+    }
+}
+
+.mint-seeds-faded {
+    position: relative;
+    width: 200px;
+    height: 250px;
+    background-color: #fcebd5;
+}
+
+.mint-image {
+    position: absolute;
+    top: 25px;
+    left: 100%;
+    transform: translateX(-50%);
+    width: 120px;
+    opacity: 0.5;
+}
+
+.seeds-image {
+    position: absolute;
+    top: 50px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 200px;
+    height: 200px;
+    opacity: 0.3;
+}

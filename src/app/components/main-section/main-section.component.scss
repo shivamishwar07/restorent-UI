@@ -1,0 +1,187 @@
+$navbar-bg: #ffffff;
+$navbar-height: 70px;
+$logo-height: 60px;
+$primary-color: #f0a500;
+$text-color: #1e1e1e;
+$hover-color: #FF7B54;
+$active-color: rgba(240, 165, 0, 0.2);
+$transition-duration: 0.3s;
+$menu-bg: #2c2c2c;
+$mobile-menu-bg: #1e1e1e;
+
+.navbar {
+    background: $navbar-bg;
+    height: $navbar-height;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    animation: fadeInNavbar 0.5s ease forwards;
+}
+
+.navbar-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    max-width: 1300px;
+    padding: 0 20px; // Adjusted for better mobile responsiveness
+}
+
+.logo img {
+    height: $logo-height;
+    width: auto;
+    transition: transform $transition-duration ease;
+}
+
+.logo img:hover {
+    transform: scale(1.1);
+}
+
+.menu-icon {
+    display: none;
+    cursor: pointer;
+    z-index: 1100;
+}
+
+.menu-icon div {
+    width: 30px;
+    height: 4px;
+    background-color: $text-color;
+    margin: 6px 0;
+    transition: transform 0.4s ease, opacity 0.4s ease, background-color $transition-duration ease;
+}
+
+.change .bar1 {
+    transform: rotate(45deg) translate(6px, 6px);
+}
+
+.change .bar2 {
+    opacity: 0;
+}
+
+.change .bar3 {
+    transform: rotate(-45deg) translate(6px, -6px);
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+    text-align: center;
+    transition: background-color $transition-duration ease;
+}
+
+.nav-menu.active {
+    background: $mobile-menu-bg;
+}
+
+.nav-item {
+    height: 40px;
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.nav-links {
+    color: $text-color;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    padding: 0 1.5rem;
+    height: 100%;
+    position: relative;
+    transition: color $transition-duration ease, transform $transition-duration ease;
+}
+
+.nav-links:hover {
+    background-color: $hover-color;
+    color: $text-color;
+    transform: translateY(-2px);
+    border-radius: 20px;
+}
+
+.nav-links.active {
+    background-color: $active-color;
+    color: $text-color;
+}
+
+.nav-links.active::after {
+    content: '';
+    position: absolute;
+    bottom: -5px; // Adjusted for better visibility
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0%;
+    height: 2px;
+    background-color: $primary-color;
+    transition: width 0.3s ease;
+}
+
+.nav-links.active::after,
+.nav-links:hover::after {
+    width: 100%;
+}
+
+@media screen and (max-width: 960px) {
+    .navbar-container {
+        padding: 0 10px;
+        justify-content: space-between;
+    }
+
+    .menu-icon {
+        display: block;
+    }
+
+    .nav-menu {
+        flex-direction: column;
+        width: 100%;
+        height: calc(100vh - $navbar-height);
+        position: absolute;
+        top: $navbar-height;
+        left: -100%;
+        opacity: 0;
+        transition: all 0.5s ease;
+        background: $mobile-menu-bg;
+        padding: 20px 0;
+    }
+
+    .nav-menu.active {
+        left: 0;
+        opacity: 1;
+        transition: all 0.5s ease;
+    }
+
+    .nav-item {
+        width: 100%;
+        text-align: center;
+    }
+
+    .nav-links {
+        text-align: center;
+        padding: 15px 0; // Increased padding for better touch targets
+        width: 100%;
+        display: block; // Adjust for mobile display
+    }
+
+    .nav-links.active::after {
+        display: none; // Hide active indicator for mobile
+    }
+}
+
+@keyframes fadeInNavbar {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

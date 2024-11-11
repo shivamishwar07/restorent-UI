@@ -1,0 +1,132 @@
+.popular-dishes {
+    max-width: 1500px;
+    margin: auto;
+    padding: 20px;
+}
+
+.card-container {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+.dish-card {
+    background: #F9D8BC;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    margin: 10px;
+    flex: 0 0 calc(25% - 20px);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.dishes {
+    background-color: #F7EDD4;
+}
+
+.dish-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+.dish-image {
+    width: 100%;
+    height: 210px;
+    object-fit: cover;
+}
+
+.card-content {
+    padding: 15px;
+    flex-grow: 1;
+}
+
+.rating {
+    color: #FF7B54;
+    font-size: 22px;
+}
+
+.dish-name {
+    font-size: 28px;
+}
+
+.dish-heading {
+    font-size: 32px;
+    margin-left: 12px;
+}
+
+.price-add {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: auto;
+}
+
+.price {
+    font-weight: bold;
+    font-size: 1.2em;
+}
+
+.add-to-cart {
+    background: #FC6045;
+    color: #fff;
+    border: none;
+    border-radius: 25px;
+    padding: 10px 15px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.add-to-cart:hover {
+    background: #eb3a1b;
+}
+
+.pagination {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.pagination button {
+    margin: 0 5px;
+    padding: 20px 22px;
+    background: #FC6045;
+    color: black;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    margin-right: 8px;
+    transition: background 0.3s;
+}
+
+.pagination button:hover {
+    background: #f13615;
+}
+
+.pagination button:disabled {
+    background: #ddd;
+}
+
+@media (max-width: 768px) {
+    .dish-card {
+        flex: 0 0 calc(50% - 20px);
+    }
+}
+
+@media (max-width: 480px) {
+    .dish-card {
+        flex: 0 0 calc(100% - 20px);
+    }
+}
+
+.top-heading {
+    display: flex;
+    justify-content: space-between;
+}
+
+.center-item {
+    display: flex;
+    justify-content: center;
+}

@@ -1,0 +1,22 @@
+<div class="about-us">
+    <div class="container gap-5">
+        <div class="chef-section">
+            <img src="../../../assets/img/chef.png" alt="Chef">
+            <div class="background-circles"></div>
+        </div>
+    
+        <div class="content-section">
+            <h1>We Are More Than <br> Multiple Service</h1>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet
+                odio mattis.</p>
+    
+            <div class="services">
+                <div class="service-item" *ngFor="let service of services">
+                    <img [src]="'../../../assets/img/' + service.icon" alt="{{ service.name }}">
+                    {{ service.name }}
+                </div>
+            </div>
+            <button class="about-btn">About Us</button>
+        </div>
+    </div>
+</div>

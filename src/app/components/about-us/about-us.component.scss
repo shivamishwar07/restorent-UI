@@ -1,0 +1,129 @@
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4e7d1;
+}
+
+.about-us{
+    background-color: #F7EDD4;
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px;
+}
+
+.chef-section {
+    position: relative;
+    width: 40%;
+    min-width: 250px;
+}
+
+.chef-section img {
+    width: 100%;
+    border-radius: 50%;
+    border: 2px solid #F9D8BC;
+}
+
+.background-circles {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    height: 80%;
+    background: conic-gradient(#fcd9b6, #f4e7d1);
+    border-radius: 50%;
+    z-index: -1;
+}
+
+.content-section {
+    width: 50%;
+    padding: 20px;
+    line-height: 1;
+}
+
+.content-section h1 {
+    font-size: 2.5rem;
+    color: #333;
+}
+
+.content-section p {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #666;
+    margin: 20px 0;
+}
+
+.services {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.service-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 1.3rem;
+    width: 45%;
+    /* Ensure consistent width */
+}
+
+.service-item img {
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
+}
+
+.service-item span {
+    flex-grow: 1;
+    /* Ensure text starts at the same position */
+    display: inline-block;
+    padding-left: 5px;
+    /* Add padding to the text */
+}
+
+/* Button alignment */
+.about-btn {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #f57c40;
+    color: white;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .services {
+        justify-content: center;
+    }
+
+    .service-item {
+        width: 100%;
+        /* Ensure each item takes full width on mobile */
+        justify-content: center;
+    }
+}
+
+
+@media (max-width: 480px) {
+    .content-section h1 {
+        font-size: 1.5rem;
+    }
+
+    .services {
+        flex-direction: column;
+        gap: 10px;
+    }
+}

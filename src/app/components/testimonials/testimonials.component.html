@@ -1,0 +1,27 @@
+<div class="testimonials-container">
+    <h2>What Our Customer Says?</h2>
+  
+    <div class="testimonial-cards">
+      <div
+        *ngFor="let testimonial of visibleTestimonials"
+        class="testimonial-card"
+        [@fadeIn]
+      >
+        <p>{{ testimonial.message }}</p>
+        <div class="customer-info">
+          <img [src]="testimonial.image" alt="{{ testimonial.name }}" />
+          <h3>{{ testimonial.name }}</h3>
+        </div>
+      </div>
+    </div>
+  
+    <div class="navigation-arrows">
+      <button (click)="prevTestimonial()" [disabled]="isPrevDisabled">
+        <span class="arrow left-arrow">&#8592;</span>
+      </button>
+      <button (click)="nextTestimonial()" [disabled]="isNextDisabled">
+        <span class="arrow right-arrow">&#8594;</span>
+      </button>
+    </div>
+  </div>
+  

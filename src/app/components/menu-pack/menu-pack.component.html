@@ -1,0 +1,31 @@
+<div class="all-menu">
+    <div class="menu-section m-0">
+        <h2>Our Regular Menu Pack</h2>
+    
+        <!-- Category Filter Buttons -->
+        <div class="category-filters">
+            <button *ngFor="let category of categories" [ngClass]="{'active': selectedCategory === category}"
+                (click)="selectCategory(category)">
+                {{ category }}
+            </button>
+        </div>
+    
+        <!-- Menu Items -->
+        <div class="menu-items">
+            <div class="menu-item" *ngFor="let item of filteredMenuItems">
+                <div class="menu-card animate__animated animate__fadeInUp">
+                    <img [src]="'../../../assets/img/'+item.image" alt="{{ item.name }}" src="../../../assets/img/">
+                    <h3>{{ item.name }}</h3>
+                    <div class="ratings">
+                        <span *ngFor="let star of getStars(item.rating)" class="star">&#9733;</span>
+                    </div>
+                    <p>{{ item.description }}</p>
+                    <div class="d-flex justify-content-between">
+                        <div class="price text-secondary">{{ item.price | currency }}</div>
+                        <button class="add-to-cart-btn animate__animated animate__pulse">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

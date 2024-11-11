@@ -1,0 +1,18 @@
+<nav class="navbar px-5">
+    <div class="navbar-container">
+        <!-- Logo section -->
+        <div class="logo">
+            <img src="../../../assets/img/logo.png" alt="Restaurant Logo" />
+        </div>
+
+        <!-- Navigation menu -->
+        <ul class="nav-menu" [ngClass]="{'active': isMenuOpen}">
+            <li class="nav-item" *ngFor="let tab of tabs" (click)="selectActiveTab(tab.link)">
+                <a [ngClass]="activeTab == tab.link ? 'active-btn' : ''" class="nav-links">{{ tab.label }}</a>
+            </li>
+        </ul>
+
+        <!-- Reserve Table button -->
+        <a href="#reserve" class="reserve-btn">Reserve Table</a>
+    </div>
+</nav>
